@@ -97,7 +97,7 @@ saveButton.addEventListener('click', function() {
     html2canvas(gridContainer).then(function(canvas) {
         var link = document.createElement("a");
         document.body.appendChild(link);
-        link.download = "manpower_efficiency.jpg";
+        link.download = "Sketch.png";
         link.href = canvas.toDataURL();
         link.target = '_blank';
         link.click();
