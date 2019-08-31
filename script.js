@@ -4,6 +4,7 @@ const clearButton = document.querySelector('#clear');
 const gridContainer = document.querySelector('.grid-container');
 const chooseColorButton = document.querySelector('.options input');
 const randomcolorButton = document.querySelector('#randomcolor');
+const saveButton = document.querySelector('#save');
 
 
 //ColorMode Variable Declaration
@@ -89,3 +90,16 @@ randomcolorButton.addEventListener('click', function() {
 chooseColorButton.addEventListener('click', function() {
     colorMode = "custom";
 })
+
+
+//Saving Feature
+saveButton.addEventListener('click', function() {
+    html2canvas(gridContainer).then(function(canvas) {
+        var link = document.createElement("a");
+        document.body.appendChild(link);
+        link.download = "manpower_efficiency.jpg";
+        link.href = canvas.toDataURL();
+        link.target = '_blank';
+        link.click();
+    });
+});
